@@ -1,0 +1,27 @@
+name: Run Tool EXE
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-tool:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show directory (1)
+        shell: cmd
+        run: dir
+
+      - name: Show directory (2)
+        shell: cmd
+        run: dir
+
+      - name: Run tool.exe
+        shell: cmd
+        run: |
+          cd test
+          C:\Users\p\Desktop\.RE\script_tools\E\test> CSXToolPlus.exe e script.csx
+          dir
