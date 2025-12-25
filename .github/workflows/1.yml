@@ -1,4 +1,4 @@
-name: Run Tool EXE
+name: Run CSXToolPlus
 
 on:
   workflow_dispatch:
@@ -11,17 +11,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show directory (1)
-        shell: cmd
-        run: dir
-
-      - name: Show directory (2)
-        shell: cmd
-        run: dir
-
-      - name: Run tool.exe
+      - name: Go to test, run tool, show result, dir
         shell: cmd
         run: |
+          echo Moving to test directory
           cd test
-          C:\Users\p\Desktop\.RE\script_tools\E\test> CSXToolPlus.exe e script.csx
+
+          echo Running CSXToolPlus
+          CSXToolPlus.exe e script.csx
+
+          echo.
+          echo Directory after execution
           dir
