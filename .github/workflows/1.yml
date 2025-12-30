@@ -18,7 +18,7 @@ jobs:
           cd test
 
           echo Running CSXToolPlus
-          CSXToolPlus.exe e script.csx
+          CSXToolPlus.exe e script.csx -F v2
 
           echo.
           echo Directory after execution
